@@ -26,9 +26,9 @@ namespace SalesWebMvc.Models
             Sellers.Remove(seller);
         }
 
-        public double totalSales(DateTime initial, DateTime finale)
+        public double TotalSales(DateTime initial, DateTime final)
         {
-            return Sellers.Sum(sr => sr.totalSales(initial, finale));
+            return Sellers.Sum(sr => sr.TotalSales(initial, final));
         }
     }
 }

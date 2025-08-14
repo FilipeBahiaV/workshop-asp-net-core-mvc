@@ -23,10 +23,10 @@ namespace SalesWebMvc.Data
                 Department d4 = new Department(4, "Books");
 
                 Seller s1 = new Seller(1, "Bob Brown", "bob@gmail.com", new DateTime(1998, 4, 21), 1000, d1);
-                Seller s2 = new Seller(2, "Maria Green", "maria@gmail.com", new DateTime(1999, 7, 05), 1000, d1);
+                Seller s2 = new Seller(2, "Maria Green", "maria@gmail.com", new DateTime(1999, 7, 05), 1000, d2);
                 Seller s3 = new Seller(3, "Alex Grey", "alex@gmail.com", new DateTime(1978, 2, 28), 1000, d1);
-                Seller s4 = new Seller(4, "Martha Brown", "martha@gmail.com", new DateTime(1980, 7, 6), 1000, d1);
-                Seller s5 = new Seller(5, "Donald Brown", "donald@gmail.com", new DateTime(1998, 7, 21), 1000, d1);
+                Seller s4 = new Seller(4, "Martha Brown", "martha@gmail.com", new DateTime(1980, 7, 6), 1000, d4);
+                Seller s5 = new Seller(5, "Donald Brown", "donald@gmail.com", new DateTime(1998, 7, 21), 1000, d2);
                 Seller s6 = new Seller(6, "Alex Brown", "alex@gmail.com", new DateTime(2001, 8, 11), 1000, d1);
 
                 SalesRecord r1 = new SalesRecord(1, new DateTime(2018, 09, 25), 11000.0, SalesStatus.Billed, s1);

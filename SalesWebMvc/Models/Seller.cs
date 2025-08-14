@@ -1,12 +1,23 @@
-﻿using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Linq;
 namespace SalesWebMvc.Models
 {
     public class Seller
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "{0} Required")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "{0} size should be betweem 3 and 60")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} Required")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "{0} Required")]
+        [Display(Name = "Birth Date")]
+        [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
+        [Required(ErrorMessage = "{0} Required")]
+        [Range(100.0, 50000000.0, ErrorMessage = "{0} must be from {1} to {2}")]
+        [Display(Name = "Base Salary")]
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double BaseSalary { get; set; }
         public Department? Department { get; set; }
         public int DepartmentId { get; set; }
@@ -36,17 +47,17 @@ namespace SalesWebMvc.Models
             Department = department;
         }
 
-        public void addSale(SalesRecord sale)
+        public void AddSale(SalesRecord sale)
         {
             Sales.Add(sale);
         }
 
-        public void removeSale(SalesRecord sale)
+        public void RemoveSale(SalesRecord sale)
         {
             Sales.Remove(sale);
         }
 
-        public double totalSales(DateTime initial, DateTime finale)
+        public double TotalSales(DateTime initial, DateTime finale)
         {
             return Sales.Where(sr => sr.Date >= initial && sr.Date <= finale).Sum(sr => sr.Amount);
         }
